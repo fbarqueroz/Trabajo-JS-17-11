@@ -103,6 +103,12 @@ function appendTaskDOM(tarea) {
     // Borra la tarea en el DOM.
     event.currentTarget.parentNode.remove();
   });
+
+  // Ocultar tareas completadas
+  const ocultarTareas = document.getElementById('hide-completed');
+  ocultarTareas.setAttribute('type', 'checkbox');
+  ocultarTareas.checked = ocultarTareas.filter((tareaOculta) => !tareaOculta.complete);
+  ocultarTareas.dataset.taskId = tarea._id;
 }
 
 // VISTA - refreshTasksDOM(): Refresca la lista completa de tareas en el DOM.
@@ -167,3 +173,5 @@ fetch(`https://js2-tareas-api.netlify.app/api/tareas?uid=${uid}`)
     // VISTA - Inicialización de la lista del DOM, a partir de las tareas existentes.
     refreshTasksDOM(tareas);
   });
+
+
