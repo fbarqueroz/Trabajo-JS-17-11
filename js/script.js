@@ -185,7 +185,7 @@ hideTask.addEventListener('click', (event) => {
         return false;
       }
     });
-    console.log (incomplete);
+    console.log(incomplete);
     refreshTasksDOM(incomplete);
   } else {
     refreshTasksDOM(tareas);
