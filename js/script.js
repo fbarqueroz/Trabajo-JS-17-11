@@ -174,4 +174,20 @@ fetch(`https://js2-tareas-api.netlify.app/api/tareas?uid=${uid}`)
     refreshTasksDOM(tareas);
   });
 
-
+const hideTask = document.getElementById('hide-completed');
+hideTask.addEventListener('click', (event) => {
+  const checkbox = event.currentTarget;
+  if (checkbox.checked) {
+    const incomplete = tareas.filter((tarea) => {
+      if (!tarea.complete) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    console.log (incomplete);
+    refreshTasksDOM(incomplete);
+  } else {
+    refreshTasksDOM(tareas);
+  }
+});
