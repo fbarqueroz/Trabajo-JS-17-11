@@ -131,8 +131,6 @@ function addTask(nombreTarea, fechaTarea, completoTarea) {
   // Agrega el objeto en el array.
   tareas.push(nuevaTarea);
 
-  // Envía la nueva tarea al API.
-
   // Opciones para el fetch.
   const fetchOptions = {
     method: 'POST',
